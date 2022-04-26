@@ -1,8 +1,7 @@
-import { GenreResponseProps } from "./SideBar";
-import { MovieCard } from "../components/MovieCard";
-import { useEffect, useState } from "react";
-
-import { api } from "../services/api";
+import { useEffect, useState } from 'react';
+import { MovieCard } from '../components/MovieCard';
+import { api } from '../services/api';
+import { GenreResponseProps } from './SideBar';
 
 interface MovieProps {
   imdbID: string;
@@ -32,15 +31,15 @@ export function Content({ selectedGenre, selectedGenreId }: ContentProps) {
   }, [selectedGenreId]);
 
   return (
-    <div className="container">
+    <div className='container'>
       <header>
-        <span className="category">
+        <span className='category'>
           Categoria:<span> {selectedGenre.title}</span>
         </span>
       </header>
 
       <main>
-        <div className="movies-list">
+        <div className='movies-list'>
           {movies.map((movie) => (
             <MovieCard
               key={movie.imdbID}
